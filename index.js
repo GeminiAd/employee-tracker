@@ -6,6 +6,10 @@ const cTable = require('console.table');
 /* Adds support for importing .sql files into the database. */
 const Importer = require('mysql-import');
 
+const figlet = require('figlet');
+
+const printSplashPage = require("./utils/printSplashPage");
+
 /* Database parameters */
 const host = 'localhost';
 const user = 'root';
@@ -34,7 +38,7 @@ importer.import('./db/schema.sql', './db/seeds.sql').then(() => {
     console.error(err);
 });
 
-// Test
+/*
 db.query(
     'SELECT * FROM `employee`',
     function (err, results, fields) {
@@ -42,5 +46,28 @@ db.query(
         //console.log(fields); // fields contains extra meta data about results, if available
     }
 );
+*/
+
+//console.log("┏━━━━━━━━━━━━━━━━━━┓\n┃ Employee Tracker ┃\n┗━━━━━━━━━━━━━━━━━━┛");
+
+/*
+figlet.text("Employee Tracker", {
+    horizontalLayout: 'fitted',
+    verticalLayout: 'full',
+    width: 80,
+    whitespaceBreak: true
+}, function (err, data) {
+    if (err) {
+        console.log('Something went wrong...');
+        console.dir(err);
+        return;
+    }
+    console.log(data);
+});
+*/
+
+printSplashPage();
+
+
 
 db.end();
