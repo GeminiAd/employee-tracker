@@ -20,5 +20,8 @@
     "console.table": "^0.10.0",
     "inquirer": "^8.2.5",
     "mysql2": "^2.3.3"
+  },
+  "devDependencies": {
+    "mysql-import": "^5.0.26"
   }
 }
