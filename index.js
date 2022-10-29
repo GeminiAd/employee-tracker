@@ -6,8 +6,6 @@ const cTable = require('console.table');
 /* Adds support for importing .sql files into the database. */
 const Importer = require('mysql-import');
 
-const figlet = require('figlet');
-
 const printSplashPage = require("./utils/printSplashPage");
 
 /* Database parameters */
@@ -46,24 +44,6 @@ db.query(
         //console.log(fields); // fields contains extra meta data about results, if available
     }
 );
-*/
-
-//console.log("┏━━━━━━━━━━━━━━━━━━┓\n┃ Employee Tracker ┃\n┗━━━━━━━━━━━━━━━━━━┛");
-
-/*
-figlet.text("Employee Tracker", {
-    horizontalLayout: 'fitted',
-    verticalLayout: 'full',
-    width: 80,
-    whitespaceBreak: true
-}, function (err, data) {
-    if (err) {
-        console.log('Something went wrong...');
-        console.dir(err);
-        return;
-    }
-    console.log(data);
-});
 */
 
 printSplashPage();
