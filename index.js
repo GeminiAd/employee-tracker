@@ -31,11 +31,19 @@ const mainMenuQuestions = [{
     loop: false
 }];
 
+function displayTable(data) {
+    console.table(data);
+}
+
 /*
  *  Handles when the user selects the "View All Employees option".
  */
-function handleViewAllEmployees() {
-    console.log("VIEWING ALL EMPLOYEES");
+async function handleViewAllEmployees() {
+    //console.log("VIEWING ALL EMPLOYEES");
+    const [rows, fields] = await queryAllEmployees();
+    console.log("\n");
+    displayTable(rows);
+    promptMainMenu();
 }
 
 function promptMainMenu() {
@@ -53,6 +61,19 @@ function promptMainMenu() {
                 // Something else went wrong
             }
         });
+}
+
+/*
+ *  Queries the database for all employee information.
+ */
+function queryAllEmployees() {
+    return db.promise().query(
+        `SELECT t1.id, t1.first_name, t1.last_name, role.title, department.name AS department, role.salary, CASE WHEN t1.manager_id IS NOT NULL THEN CONCAT(t2.first_name, " ", t2.last_name) ELSE NULL END AS manager
+        FROM employee t1
+        INNER JOIN role ON t1.role_id = role.id
+        INNER JOIN department ON role.department_id = department.id
+        LEFT JOIN employee t2 ON t1.manager_id = t2.id`
+    );
 }
 
 /* Interface for the package that imports .sql files into the database. */
@@ -90,4 +111,4 @@ db.query(
 );
 */
 
-db.end();
+//db.end();
