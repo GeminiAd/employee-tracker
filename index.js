@@ -14,9 +14,14 @@ const user = 'root';
 const password = 'password';
 const database = 'employees_db';
 
+const mainMenuMap = {
+    "View All Employees": viewAllEmployees,
+    "Quit": quit()
+};
+
 const mainMenuQuestions = [{
     type: "list",
-    name: "menuSelection",
+    name: "mainMenuSelection",
     message: "What would you like to do?",
     choices: [
         "View All Employees",
@@ -38,7 +43,7 @@ function displayTable(data) {
 /*
  *  Handles when the user selects the "View All Employees option".
  */
-async function handleViewAllEmployees() {
+async function viewAllEmployees() {
     //console.log("VIEWING ALL EMPLOYEES");
     const [rows, fields] = await queryAllEmployees();
     console.log("\n");
@@ -50,9 +55,7 @@ function promptMainMenu() {
     inquirer
         .prompt(mainMenuQuestions)
         .then((answers) => {
-            if (answers.menuSelection === "View All Employees") {
-                handleViewAllEmployees();
-            }
+            mainMenuMap[answers.mainMenuSelection]();
         })
         .catch((error) => {
             if (error.isTtyError) {
@@ -74,6 +77,10 @@ function queryAllEmployees() {
         INNER JOIN department ON role.department_id = department.id
         LEFT JOIN employee t2 ON t1.manager_id = t2.id`
     );
+}
+
+function quit() {
+
 }
 
 /* Interface for the package that imports .sql files into the database. */
