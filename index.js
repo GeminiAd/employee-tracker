@@ -16,7 +16,7 @@ const database = 'employees_db';
 
 const mainMenuMap = {
     "View All Employees": viewAllEmployees,
-    "Quit": quit()
+    "Quit": quit
 };
 
 const mainMenuQuestions = [{
@@ -80,7 +80,7 @@ function queryAllEmployees() {
 }
 
 function quit() {
-
+    db.end();
 }
 
 /* Interface for the package that imports .sql files into the database. */
