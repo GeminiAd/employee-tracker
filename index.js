@@ -16,6 +16,7 @@ const database = 'employees_db';
 
 const mainMenuMap = {
     "View All Employees": viewAllEmployees,
+    "View All Departments": viewAllDepartments,
     "Quit": quit
 };
 
@@ -37,6 +38,7 @@ const mainMenuQuestions = [{
 }];
 
 function displayTable(data) {
+    console.log();
     console.table(data);
 }
 
@@ -44,9 +46,7 @@ function displayTable(data) {
  *  Handles when the user selects the "View All Employees option".
  */
 async function viewAllEmployees() {
-    //console.log("VIEWING ALL EMPLOYEES");
     const [rows, fields] = await queryAllEmployees();
-    console.log("\n");
     displayTable(rows);
     promptMainMenu();
 }
@@ -67,6 +67,15 @@ function promptMainMenu() {
 }
 
 /*
+ *  Queries the database for all department information.
+ */
+function queryAllDepartments() {
+    return db.promise().query(
+        `SELECT * FROM department`
+    );
+}
+
+/*
  *  Queries the database for all employee information.
  */
 function queryAllEmployees() {
@@ -81,6 +90,12 @@ function queryAllEmployees() {
 
 function quit() {
     db.end();
+}
+
+async function viewAllDepartments() {
+    const [rows, fields] = await queryAllDepartments();
+    displayTable(rows);
+    promptMainMenu();
 }
 
 /* Interface for the package that imports .sql files into the database. */
