@@ -14,9 +14,11 @@ const user = 'root';
 const password = 'password';
 const database = 'employees_db';
 
+/* This object maps the main menu options to the functions to handle those options. */
 const mainMenuMap = {
     "View All Employees": viewAllEmployees,
     "View All Departments": viewAllDepartments,
+    "View All Roles": viewAllRoles,
     "Quit": quit
 };
 
@@ -40,15 +42,6 @@ const mainMenuQuestions = [{
 function displayTable(data) {
     console.log();
     console.table(data);
-}
-
-/*
- *  Handles when the user selects the "View All Employees option".
- */
-async function viewAllEmployees() {
-    const [rows, fields] = await queryAllEmployees();
-    displayTable(rows);
-    promptMainMenu();
 }
 
 function promptMainMenu() {
@@ -88,12 +81,42 @@ function queryAllEmployees() {
     );
 }
 
+/*
+ *  Queries the database for information about all the roles.
+ */
+function queryAllRoles() {
+    return db.promise().query(
+        `SELECT role.id, role.title, department.name AS department, role.salary FROM role INNER JOIN department ON role.department_id = department.id`
+    );
+}
+
 function quit() {
     db.end();
 }
 
+/*
+ *  Handles when the user selects "View all Roles" option.
+ */
 async function viewAllDepartments() {
     const [rows, fields] = await queryAllDepartments();
+    displayTable(rows);
+    promptMainMenu();
+}
+
+/*
+ *  Handles when the user selects the "View All Employees" option.
+ */
+async function viewAllEmployees() {
+    const [rows, fields] = await queryAllEmployees();
+    displayTable(rows);
+    promptMainMenu();
+}
+
+/*
+ *  Handles when the user selects the "View All Roles" option.
+ */
+async function viewAllRoles() {
+    const [rows, fields] = await queryAllRoles();
     displayTable(rows);
     promptMainMenu();
 }
