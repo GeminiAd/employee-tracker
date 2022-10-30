@@ -14,6 +14,47 @@ const user = 'root';
 const password = 'password';
 const database = 'employees_db';
 
+const mainMenuQuestions = [{
+    type: "list",
+    name: "menuSelection",
+    message: "What would you like to do?",
+    choices: [
+        "View All Employees",
+        "Add Employee",
+        "Update Employee Role",
+        "View All Roles",
+        "Add Role",
+        "View All Departments",
+        "Add Department",
+        "Quit"
+    ],
+    loop: false
+}];
+
+/*
+ *  Handles when the user selects the "View All Employees option".
+ */
+function handleViewAllEmployees() {
+    console.log("VIEWING ALL EMPLOYEES");
+}
+
+function promptMainMenu() {
+    inquirer
+        .prompt(mainMenuQuestions)
+        .then((answers) => {
+            if (answers.menuSelection === "View All Employees") {
+                handleViewAllEmployees();
+            }
+        })
+        .catch((error) => {
+            if (error.isTtyError) {
+                // Prompt couldn't be rendered in the current environment
+            } else {
+                // Something else went wrong
+            }
+        });
+}
+
 /* Interface for the package that imports .sql files into the database. */
 const importer = new Importer({ host, user, password, database });
 
@@ -32,6 +73,9 @@ const db = mysql.createConnection(
 importer.import('./db/schema.sql', './db/seeds.sql').then(() => {
     var files_imported = importer.getImported();
     console.log(`${files_imported.length} SQL file(s) imported.`);
+
+    printSplashPage();
+    promptMainMenu();
 }).catch(err => {
     console.error(err);
 });
@@ -45,9 +89,5 @@ db.query(
     }
 );
 */
-
-printSplashPage();
-
-
 
 db.end();
