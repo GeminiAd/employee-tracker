@@ -7,48 +7,13 @@ const cTable = require('console.table');
 const Importer = require('mysql-import');
 
 const printSplashPage = require("./utils/printSplashPage");
-const MainMenu = require('./lib/MainMenu');
+const MainMenu = require('./lib/menu/MainMenu');
 
 /* Database parameters */
 const host = 'localhost';
 const user = 'root';
 const password = 'password';
 const database = 'employees_db';
-
-const addDepartmentQuestions = [{
-    type: "input",
-    name: "name",
-    message: "What is the name of the department?",
-    validate: validateDepartment
-}];
-
-/* Prompts the user for the name of the department, then attempts to add the department to the database. */
-function addDepartment() {
-    addDepartmentPrompt();
-}
-
-function addDepartmentPrompt() {
-    inquirer
-        .prompt(addDepartmentQuestions)
-        .then((answers) => {
-            console.log(answers);
-        })
-        .catch((error) => {
-            if (error.isTtyError) {
-                // Prompt couldn't be rendered in the current environment
-            } else {
-                // Something else went wrong
-            }
-        });
-}
-
-function validateDepartment(answer) {
-    if (!answer.trim().length) {
-        return "ERROR: Expected name to be a non-empty string";
-    } else {
-        return true;
-    }
-}
 
 /* Interface for the package that imports .sql files into the database. */
 const importer = new Importer({ host, user, password, database });
