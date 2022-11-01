@@ -10,4 +10,8 @@ LEFT JOIN employee t2 ON t1.manager_id = t2.id;
 SELECT role.id, role.title, department.name AS department, role.salary FROM role INNER JOIN department ON role.department_id = department.id;
 */
 
-UPDATE employee SET role_id = ? WHERE id = ?
+/*
+SELECT * from department WHERE department.id NOT IN (SELECT department_id FROM role); 
+*/
+
+SELECT * from role WHERE role.id NOT IN (SELECT role_id FROM employee);
