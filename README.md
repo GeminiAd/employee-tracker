@@ -19,6 +19,50 @@
 
 ## Description
 
+<a href="#main-menu">Main Menu</a>                    
+<a href="#view-all-employees">View All Employees</a>                 
+<a href="#add-employee">Add Employee</a>                  
+<a href="#update-employee-role">Update Employee Role</a>                
+<a href="#view-all-roles">View All Roles</a>               
+<a href="#add-role">Add Role</a>                   
+<a href="#view-all-departments">View All Departments</a>                  
+<a href="#add-department">Add Department</a>                 
+<a href="#quit">Quit</a>             
+
+### Main Menu
+
+
+
+### View All Employees
+
+
+
+### Add Employee
+
+
+
+### Update Employee Role
+
+
+
+### View All Roles
+
+
+
+### Add Role
+
+
+
+### View All Departments
+
+
+
+### Add Department
+
+
+
+### Quit
+
 
 
 ## Key Features
