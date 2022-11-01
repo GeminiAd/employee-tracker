@@ -8,7 +8,6 @@
 <a href="#usage">Usage</a> •
 <a href="#technologies-used">Technologies Used</a> •
 <a href="#concepts-demonstrated">Concepts Demonstrated</a> •
-<a href="#credits">Credits</a> •
 <a href="#author">Author</a>
 
 -------------------------------------------------------
@@ -127,31 +126,42 @@ If you select the "Quit" choice, the program quits:
 
 ## Key Features
 
-- Add and update information about employees.
+- Store information about employees in one program with a user interface.
+- View all employees and their related role and department information.
+- Add an employee into the system.
+- Update an existing employee's role.
+- View all roles and their related department.
+- Add a new role intothe system.
+- View all departments.
+- Add a new department into the system.
 
 ## Installation
 
-
+- Make sure that node.js and the npm package manager are installed on your local terminal.
+- Clone down the application repo into a directory.
+- Navigate into the directory that the application was cloned to in a terminal and type `npm install` to install all dependencies.
 
 ## Usage
 
-
+- Navigate to the directory that the application was cloned to in a terminal and type `node index.js` to run the program.
+- Choose your action via the main menu prompt.
 
 ## Technologies Used
 
-- [Inquirer Package](https://www.npmjs.com/package/inquirer)
+- [MySQL database software](https://www.mysql.com/)
+- [mysql2 package](https://www.npmjs.com/package/mysql2)
+- [mysql2-import package](https://www.npmjs.com/package/mysql2-import)
+- [Inquirer package](https://www.npmjs.com/package/inquirer)
+- [console.table package](https://www.npmjs.com/package/console.table)
 - [node.js](https://nodejs.org/en/)
 - [JavaScript](https://www.javascript.com/)
 
 ## Concepts Demonstrated
 
+- Using MySQL to query a database for different types of information.
 - The use of node.js
 - Installing and using node.js packages using npm.
 - General JavaScript and programming knowledge.
-
-## Credits
-
-  
 
 ## Author
 
