@@ -29,16 +29,37 @@
 <a href="#add-department">Add Department</a>                 
 <a href="#quit">Quit</a>             
 
+This is just an application to display and modify information about the employees in a company.
+When you start the program, you are taken to a splash page:               
+
+![Splash Page](./images/splash-page.png)                  
+
+Then, you are taken to the main menu prompt.         
+
 ### Main Menu
 
+The main menu prompt has several choices:                         
+
+![Main Menu Prompt Choices Top](./images/main-menu-prompt-top.png)                      
+
+![Main Menu Prompt Choices Bottom](./images/main-menu-prompt-bottom.png)                      
 
 
 ### View All Employees
 
+If you select the "View All Employees" choice, all the employees and their associated roles and departments are displayed:                
 
+![View All Employees Choice](./images/view-all-employees.png)                        
 
 ### Add Employee
 
+If you select the "Add Employee" choice, you are prompted for the first and last name of the employee:                 
+
+![Add Employee First and Last Name Prompt](./images/add-employee-first-last-name-prompt.png)             
+
+Then you're prompted for a list of roles to choose from:                
+
+![Add Employee First and Last Name Prompt](./images/add-employee-first-last-name-prompt.png)    
 
 
 ### Update Employee Role
