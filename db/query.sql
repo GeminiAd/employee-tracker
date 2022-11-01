@@ -14,4 +14,10 @@ SELECT role.id, role.title, department.name AS department, role.salary FROM role
 SELECT * from department WHERE department.id NOT IN (SELECT department_id FROM role); 
 */
 
-SELECT * from role WHERE role.id NOT IN (SELECT role_id FROM employee);
+
+SELECT t1.id, t1.first_name, t1.last_name, role.title, department.name AS department, role.salary, CASE WHEN t1.manager_id IS NOT NULL THEN CONCAT(t2.first_name, " ", t2.last_name) ELSE "None" END AS Manager
+FROM employee t1
+INNER JOIN role ON t1.role_id = role.id
+INNER JOIN department ON role.department_id = department.id
+LEFT JOIN employee t2 ON t1.manager_id = t2.id
+WHERE department.id = 1;

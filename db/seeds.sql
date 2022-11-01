@@ -3,7 +3,6 @@ INSERT INTO department (name) VALUE ("Engineering");
 INSERT INTO department (name) VALUE ("Finance");
 INSERT INTO department (name) VALUE ("Legal");
 INSERT INTO department (name) VALUE ("Service");
-INSERT INTO department (name) VALUE ("New Department");
 
 INSERT INTO role (title, salary, department_id) VALUE ("Sales Lead", 100000, 1);
 INSERT INTO role (title, salary, department_id) VALUE ("Salesperson", 80000, 1);
