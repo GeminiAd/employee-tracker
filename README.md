@@ -2,6 +2,8 @@
 
 # Employee Tracker
 
+![Splash Page](./images/splash-page.png)
+
 <a href="#description">Description</a> •
 <a href="#key-features">Key Features</a> •
 <a href="#installation">Installation</a> •
@@ -20,6 +22,8 @@
 
 <a href="#main-menu">Main Menu</a>                    
 <a href="#view-all-employees">View All Employees</a>                 
+<a href="#view-employees-by-department">View Employees By Department</a>              
+<a href="#view-employees-by-manager">View Employees By Manager</a>              
 <a href="#add-employee">Add Employee</a>                  
 <a href="#update-employee-role">Update Employee Role</a>                
 <a href="#view-all-roles">View All Roles</a>               
@@ -29,11 +33,7 @@
 <a href="#quit">Quit</a>             
 
 This is just an application to display and modify information about the employees in a company.
-When you start the program, you are taken to a splash page:               
-
-![Splash Page](./images/splash-page.png)                  
-
-Then, you are taken to the main menu prompt.         
+When you start the program, you are taken to a splash page, then the main menu prompt.         
 
 ### Main Menu
 
@@ -43,11 +43,34 @@ The main menu prompt has several choices:
 
 ![Main menu prompt choices bottom](./images/main-menu-prompt-bottom.png)                      
 
+Whenever you complete an action chosen from the main menu, you are taken back to the main menu, with the exception of the "Quit" option.
+
 ### View All Employees
 
 If you select the "View All Employees" choice, all the employees and their associated roles and departments are displayed:                
 
 ![View all employees choice](./images/view-all-employees.png)                        
+
+### View Employees By Department
+
+If you select the "View Employees By Department" choice, you are prompted to choose a department:
+
+![View employees by department prompt](./images/view-employees-by-department-prompt.png)           
+
+After you select a department, the list of employees in that department is displayed:                   
+
+![View employees by department results](./images/view-employees-by-department-results.png)           
+
+### View Employees By Manager
+
+If you select the "View Employees By Manager" choice, you are prompted to choose a manager:                    
+
+![View employees by manager prompt](./images/view-employees-by-manager-prompt.png)               
+
+After you select a manager, the list of employees with that manager - or with no manager - is displayed:                     
+
+![View employees by manager success](./images/view-employees-by-manager-success.png)               
+
 
 ### Add Employee
 
@@ -128,12 +151,15 @@ If you select the "Quit" choice, the program quits:
 
 - Store information about employees in one program with a user interface.
 - View all employees and their related role and department information.
+- View all employees by department.
+- View all employees by manager.
 - Add an employee into the system.
 - Update an existing employee's role.
 - View all roles and their related department.
 - Add a new role intothe system.
 - View all departments.
 - Add a new department into the system.
+- Input validation.
 
 ## Installation
 
@@ -159,6 +185,7 @@ If you select the "Quit" choice, the program quits:
 ## Concepts Demonstrated
 
 - Using MySQL to query a database for different types of information.
+- Reading from and writing to a file.
 - The use of node.js
 - Installing and using node.js packages using npm.
 - General JavaScript and programming knowledge.
