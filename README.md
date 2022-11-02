@@ -31,6 +31,7 @@
 <a href="#view-all-departments">View All Departments</a>                  
 <a href="#add-department">Add Department</a>                 
 <a href="#quit">Quit</a>             
+<a href="#input-validation">Input Validation</a>             
 
 This is just an application to display and modify information about the employees in a company.
 When you start the program, you are taken to a splash page, then the main menu prompt.         
@@ -104,7 +105,6 @@ When you've selected all choices, the employee's role is updated and message is 
 
 ![Update employee role success](./images/update-employee-role-success.png)          
 
-
 ### View All Roles
 
 If you select the "View All Roles" choice, all roles and their associated department and salary are shown:                   
@@ -147,16 +147,22 @@ If you select the "Quit" choice, the program quits:
 
 ![Program quit](./images/quit-program.png)
 
+### Input Validation
+
+If you enter invalid information when prompted for input a message is displayed, and the prompt will not let you continue until you enter valid information:             
+
+![Example of input validation in prompt](./images/input-validation-example.png)
+
 ## Key Features
 
-- Store information about employees in one program with a user interface.
+- Store information about employees, their roles, and the departments associated with that role in one program with a user interface.
 - View all employees and their related role and department information.
 - View all employees by department.
 - View all employees by manager.
 - Add an employee into the system.
 - Update an existing employee's role.
 - View all roles and their related department.
-- Add a new role intothe system.
+- Add a new role into the system.
 - View all departments.
 - Add a new department into the system.
 - Input validation.
